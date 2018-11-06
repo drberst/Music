@@ -119,7 +119,11 @@ public class Guitar {
 		}
 		System.out.printf("we done, count was %d, total time was %d ms\n", count,System.currentTimeMillis() - start);
 	}
-
+	public static Noteg noteOnString(int str, int interval) {
+		Note root = strs[5-str];
+		Noteg result = new Noteg(root.transpose(interval), str, interval);
+		return result;
+	}
 	LinkedList<Noteg> findAll(Note aNote) {
 		//		int lowest = aNote.value-min;
 		//		int lowest = 
